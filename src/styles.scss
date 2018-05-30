@@ -1,13 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
 .content {
     text-align: center;
     padding: 10vh 15vw;
 }
 
 body {
-    font-family: "sofia-pro",sans-serif;
+    font-family: "sofia-pro", sans-serif;
+    min-height: 500vh;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: bold;
+}
+
+input:focus {
+    outline: none !important;
+    border-radius: 0px !important;
+}
+
+.ais-SearchBox-input {
+    outline: none !important;
+    border-radius: 0px !important;
+}
+
+.bio {
+    font-size: 0.7em;
+    color: gray;
 }

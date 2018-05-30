@@ -15,7 +15,7 @@ export const environment = {
 
   algolia: {
     appId: 'V8JUVYXCAO',
-    searchKey: '0f79d5fd7e9bd53bec97268373971480'
+    apiKey: '0f79d5fd7e9bd53bec97268373971480'
   }
 }
 

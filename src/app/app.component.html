@@ -1,19 +1,34 @@
 <main>
     <h3>Oh hello</h3>
     <p>Welcome to AngularFirebase world </p>
-    <!-- simple name only that assumes the 'fas' prefix -->
     <fa-icon icon="fire" size="6x" style="color: #f27236"></fa-icon>
+
+    <hr>
+
+    <button class="button is-success" (click)="addAnimal()">Add Animal to Firestore</button>
+
+    <hr>
 
 </main>
 
 <ng-ais-instantsearch [config]="searchConfig">
 
-    <ng-ais-search-box></ng-ais-search-box>
+    <ng-ais-search-box (change)="searchChanged($event)"></ng-ais-search-box>
 
-    <ng-ais-hits>
+    <ng-ais-hits *ngIf="showResults">
         <ng-template let-hits="hits">
-            <div *ngFor="let hit of hits">
-                {{ hit.objectID }}: {{ hit.title }}
+            <div *ngFor="let hit of hits" class="hits">
+
+                <img [src]="hit.avatar" width="30px">
+
+                <ng-ais-highlight attribute="name" [hit]="hit">
+                </ng-ais-highlight>
+
+                <div class="bio">
+                    {{ hit.bio | slice:0:30 }}...
+                </div>
+
+                <hr>
             </div>
         </ng-template>
     </ng-ais-hits>
