@@ -28,6 +28,8 @@ const yourFirebaseConfig = {
 // Delete Me!
 import { firebase } from '../env';
 
+import { NgAisModule } from 'angular-instantsearch';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -39,7 +41,8 @@ import { firebase } from '../env';
     AngularFirestoreModule, 
     AngularFireAuthModule, 
     AngularFireStorageModule,
-    FontAwesomeModule 
+    FontAwesomeModule ,
+    NgAisModule// .forRoot()
   ],
   bootstrap: [AppComponent]
 })

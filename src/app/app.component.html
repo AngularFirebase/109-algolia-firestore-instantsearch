@@ -1,8 +1,26 @@
 <main>
-  <h3>Oh hello</h3>
-  <p>Welcome to AngularFirebase world </p>
-  <!-- simple name only that assumes the 'fas' prefix -->
-  <fa-icon icon="fire" size="6x" style="color: #f27236"></fa-icon>
+    <h3>Oh hello</h3>
+    <p>Welcome to AngularFirebase world </p>
+    <!-- simple name only that assumes the 'fas' prefix -->
+    <fa-icon icon="fire" size="6x" style="color: #f27236"></fa-icon>
 
 </main>
+
+<ng-ais-instantsearch [config]="searchConfig">
+
+    <ng-ais-search-box></ng-ais-search-box>
+
+    <ng-ais-hits>
+        <ng-template let-hits="hits">
+            <div *ngFor="let hit of hits">
+                {{ hit.objectID }}: {{ hit.title }}
+            </div>
+        </ng-template>
+    </ng-ais-hits>
+
+
+
+
+
+</ng-ais-instantsearch>
 <router-outlet></router-outlet>

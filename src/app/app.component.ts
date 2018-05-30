@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore'
+import { AngularFirestore } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
+
 
 @Component({
   selector: 'app-root',
@@ -7,10 +9,13 @@ import { AngularFirestore } from 'angularfire2/firestore'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  searchConfig = {
+    ...environment.algolia,
+    indexName: 'animals'
+  }
+
   constructor(private afs: AngularFirestore) { 
-    afs.collection('animals').snapshotChanges(
-  ).subscribe(x => {
-    console.log(x)
-  })
+
   }
 }
