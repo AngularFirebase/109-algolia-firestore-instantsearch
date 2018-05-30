@@ -25,7 +25,7 @@ exports.indexAnimal = functions.firestore
 exports.unindexAnimal = functions.firestore
   .document('zoo/{animalId}')
   .onDelete((snap, context) => {
-    const objectId = context.params.animalId;
+    const objectId = snap.id;
 
     // Delete an ID from the index
     return index.deleteObject(objectId);

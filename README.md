@@ -1,7 +1,4 @@
-# Episode 10X
+# Episode 109 - Algolia Firestore + Angular InstantSearch
 
 
-1. `git clone <this-repo>` 
-2. `npm install`
-3.  Add your firebase credentials to the `app.module`
-4. `ng serve`
+Watch the [screencast](https://angularfirebase.com/lessons/)

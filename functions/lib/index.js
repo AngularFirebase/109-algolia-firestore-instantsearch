@@ -12,14 +12,14 @@ exports.indexAnimal = functions.firestore
     .document('zoo/{animalId}')
     .onCreate((snap, context) => {
     const data = snap.data();
-    const objectId = context.params.animalId;
+    const objectId = snap.id;
     // Add the data to the algolia index
     return index.addObject(Object.assign({ objectId }, data));
 });
 exports.unindexAnimal = functions.firestore
     .document('zoo/{animalId}')
     .onDelete((snap, context) => {
-    const objectId = context.params.animalId;
+    const objectId = snap.id;
     // Delete an ID from the index
     return index.deleteObject(objectId);
 });
